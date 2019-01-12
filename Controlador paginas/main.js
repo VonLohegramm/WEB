@@ -23,14 +23,30 @@ function mudar(qtd)
 	//Aqui criamos a string da proxima paina
 	var stringFinal = url.replace(aux2, "page-" + num);
 
-	//Pegamos o texto do botão 'Proximo'
-	var a = document.getElementsByClassName('pageNav-jump pageNav-jump--next')[0];
-
-	//Caso exista exista o botão, pularemos para proxima pagina
-	if(a.innerText != "")
+	if(qtd == 1)
 	{
-		window.location = stringFinal;
+		//Pegamos o texto do botão 'Proximo'
+		var a = document.getElementsByClassName('pageNav-jump pageNav-jump--next')[0];
+
+		//Caso exista exista o botão, pularemos para proxima pagina
+		if(a.innerText != "")
+		{
+			window.location = stringFinal;
+		}	
 	}
+	else if(qtd == -1)
+	{
+		//Pegamos o texto do botão 'Proximo'
+		var a = document.getElementsByClassName('pageNav-jump pageNav-jump--prev')[0];
+
+		//Caso exista exista o botão, pularemos para proxima pagina
+		if(a.innerText != "")
+		{
+			window.location = stringFinal;
+		}
+	}
+
+
 }
 
 document.querySelector('body').addEventListener('keydown', function(event){
